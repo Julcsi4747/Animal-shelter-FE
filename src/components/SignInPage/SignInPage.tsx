@@ -1,10 +1,8 @@
 import React from "react";
 
 const SignInPage = () => {
-    return <div className="container d-flex justify-content-center">
-        <div className="card my-4  p-4 bg-white shadow text-center">
-            <h5><b>Sign In Page</b></h5>
-        </div>
+    return <div className="container text-lg-start my-4 p-4 shadow"><h5>Belépés</h5>
+        <h5 className="text-end">Regisztráció</h5>
     </div>
 };
 
