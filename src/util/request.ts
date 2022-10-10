@@ -45,7 +45,7 @@ axios.interceptors.response.use(
 );
 
 export function generateUrl(resource: string = "") {
-    return `http://localhost:3001/${resource}`;
+    return `http://localhost:3001/api/${resource}`;
 }
 
 async function request<T = void>({
