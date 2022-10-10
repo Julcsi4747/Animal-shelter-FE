@@ -3,7 +3,7 @@ import { SuccessesModel } from "../models/successes.model";
 
 class SuccessesService {
     async getSuccess() {
-        return request<SuccessesModel[]>({ method: Methods.GET, resource: "success" });
+        return request<SuccessesModel[]>({ method: Methods.GET, resource: "adoption" });
     }
 }
 

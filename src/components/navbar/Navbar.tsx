@@ -15,7 +15,6 @@ const Navbar: FC = () => {
     const routes: RouteConfig[] = [
         { label: "Főoldal", link: "/home" },
         { label: "Gazdit keresek", link: "/adopt"},
-        { label: "Ideiglenes örökbefogadás", link: "/foster"},
         { label: "Belépés/Regisztráció", link: "/signin"},
         { label: "Sikersztorik", link: "/successes"},
     ];

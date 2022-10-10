@@ -19,9 +19,9 @@ const SuccessesPage = () => {
     }, []);
 
     return (
-        <Page title="Success">
+        <Page title="Sikersztorik">
             <div className="row">
-                {success.map(({ id, image, name, description }) => (
+                {success.map(({ id, image, name, date }) => (
                     <div key={id} className="col-lg-4 col-md-6 col-sm-12">
                         <div
                             className={classNames(
@@ -35,7 +35,7 @@ const SuccessesPage = () => {
                             />
                             <div className="d-flex flex-column">
                                 <h5 className="ms-3">{name}</h5>
-                                <p className="ms-3 text-black-50">{description}</p>
+                                <p className="ms-3 text-black-50">{date.toString()}</p>
                             </div>
                         </div>
                     </div>

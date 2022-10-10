@@ -1,7 +1,6 @@
 export interface SuccessesModel {
-    id: number;
+    id: string;
     name: string;
+    date: Date;
     image: string;
-    description: string;
-    createAt: Date;
 }
