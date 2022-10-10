@@ -19,7 +19,7 @@ const SuccessesPage = () => {
     }, []);
 
     return (
-        <Page title="Success">
+        <Page title="Sikersztorik">
             <div className="row">
                 {success.map(({ id, image, name, date }) => (
                     <div key={id} className="col-lg-4 col-md-6 col-sm-12">
