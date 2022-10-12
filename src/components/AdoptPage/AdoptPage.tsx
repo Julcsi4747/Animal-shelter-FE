@@ -30,15 +30,15 @@ const AdoptPage = () => {
                 </div>
             </div>
             <div className="row">
-                {dogs.map(({ id, image_url , name }) => (
+                {dogs.map(({ id, imageUrl , name }) => (
                     <div key={id} className="col-12 col-sm-6 col-md-4 col-lg-3 my-1">
                         <Link
                             to={`/adopt/${id}`}
                             className={classNames("card", classes.DogCard)}
                         >
                             <img
-                                src={image_url}
-                                alt={`user #${id}`}
+                                src={imageUrl}
+                                alt={`dog #${id}`}
                                 className={classNames(classes.DogImage, "card-img-top")}
                             />
                             <div className="card-body">

@@ -6,9 +6,9 @@ export interface DogModel {
     gender: string;
     castrated: boolean;
     color: string;
-    birth_date: Date;
+    birthDate: Date;
     description: string;
-    image_url: string;
+    imageUrl: string;
 }
 
 export interface DogValues extends Omit<DogModel, "id"> {}

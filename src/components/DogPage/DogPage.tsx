@@ -20,12 +20,12 @@ const DogPage = () => {
 
     const initialValues: DogValues = {
         name: dog?.name || "",
-        image_url: dog?.image_url || "",
+        imageUrl: dog?.imageUrl || "",
         breed: dog?.breed || "",
         gender: dog?.gender || "",
         castrated: dog?.castrated || false,
         color: dog?.color || "",
-        birth_date: dog?.birth_date || new Date("2022-01-01"),
+        birthDate: dog?.birthDate || new Date("2022-01-01"),
         description: dog?.description || "",
     };
 
