@@ -50,7 +50,7 @@ const DogPage = () => {
     };
 
     const goToAdoptPage = () => {
-        navigate("/dogs");
+        navigate("/adopt");
     };
 
     return (
