@@ -20,7 +20,7 @@ function App() {
               <Route path="/home" element={<HomePage />}/>
               <Route path="/signin" element={<SignInPage />}/>
               <Route path="/adopt" element={<AdoptPage />}/>
-              <Route path="/dogs/:id" element={<DogPage />} />
+              <Route path="/dog/create" element={<DogPage />} />
               <Route path="/successes" element={<SuccessesPage />}/>
               <Route path="/error" element={<ErrorPage />}/>
               <Route path="*" element={<Navigate to={"/error"} replace={true}/>}/>

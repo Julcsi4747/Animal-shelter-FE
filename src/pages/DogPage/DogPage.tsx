@@ -64,8 +64,16 @@ const DogPage = () => {
                 validateOnChange
             >
                 <Form>
-                    <TextField name="name" label="Name" />
-                    <TextField name="image" label="Dog image url" />
+                    <TextField name="name" label="Név" />
+                    <TextField name="breed" label="Fajta" />
+                    <TextField name="gender" label="Nem" />
+                    <TextField name="castrated" label="Ivartalanítva" />
+                    <TextField name="color" label="Szín" />
+                    <TextField name="birthDate" label="Születés" />
+                    <TextField name="description" label="Leírás" />
+                    <TextField name="imageUrl" label="Kép" />
+                    <TextField name="adopted" label="Örökbefogadva" />
+
 
                     <div className="mt-3">
                         <Button
