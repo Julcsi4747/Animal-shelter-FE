@@ -16,10 +16,10 @@ const DogPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchDogs = async (id: string) =>
+        const fetchDog = async (id: string) =>
             setDog(await adoptService.getDog(id));
         if (id) {
-            fetchDogs(id);
+            fetchDog(id);
         }
     }, [id]);
 
@@ -36,8 +36,13 @@ const DogPage = () => {
 
     const schema = Yup.object().shape({
         name: Yup.string().required(),
-        image: Yup.string().required(),
-        badges: Yup.array(),
+        imageUrl: Yup.string().required(),
+        breed: Yup.string().required(),
+        gender: Yup.string().required(),
+        castrated: Yup.boolean().required(),
+        color: Yup.string().required(),
+        birthDate: Yup.date().required(),
+        description: Yup.string().required(),
     });
 
     const handleSubmit = async (values: DogFormValues) => {
@@ -72,7 +77,6 @@ const DogPage = () => {
                     <TextField name="birthDate" label="Születés" />
                     <TextField name="description" label="Leírás" />
                     <TextField name="imageUrl" label="Kép" />
-                    <TextField name="adopted" label="Örökbefogadva" />
 
 
                     <div className="mt-3">

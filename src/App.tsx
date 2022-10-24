@@ -21,6 +21,7 @@ function App() {
               <Route path="/signin" element={<SignInPage />}/>
               <Route path="/adopt" element={<AdoptPage />}/>
               <Route path="/dog/create" element={<DogPage />} />
+              <Route path="/adopt/:id" element={<DogPage/>} />
               <Route path="/successes" element={<SuccessesPage />}/>
               <Route path="/error" element={<ErrorPage />}/>
               <Route path="*" element={<Navigate to={"/error"} replace={true}/>}/>
