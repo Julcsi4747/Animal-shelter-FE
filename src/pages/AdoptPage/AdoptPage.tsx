@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react";
+import {useCallback, useEffect, useState} from "react";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "../../components/button/Button";
 import Page from "../../components/page/Page";
-import { DogModel } from "../models/adopt.model";
-import { adoptService } from "../services/adopt.service";
+import { DogModel } from "../../models/adopt.model";
+import { adoptService } from "../../services/adopt.service";
 
 import classes from "./AdoptPage.module.scss";
 
 const AdoptPage = () => {
     const [dogs, setDogs] = useState<DogModel[]>([]);
+    const navigate = useNavigate();
+
+    const fetchDogs = useCallback(async () => {
+        setDogs(await adoptService.getDogs());
+    }, []);
 
     useEffect(() => {
         const fetchDogs = async () => {
@@ -22,11 +27,20 @@ const AdoptPage = () => {
         fetchDogs();
     }, []);
 
+    const goToDogPage = () => {
+        navigate("/dog/create");
+    };
+
+    const handleDeleteDog = async (id: string) => {
+        await adoptService.deleteDog(id);
+        fetchDogs();
+    };
+
     return (
         <Page title="Adopt">
             <div className="row">
                 <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <Button className="w-100 mb-3">Create Dog</Button>
+                    <Button className="w-100 mb-3" onClick={goToDogPage}>Create Dog</Button>
                 </div>
             </div>
             <div className="row">
@@ -44,7 +58,11 @@ const AdoptPage = () => {
                             <div className="card-body">
                                 <h5>{name}</h5>
                             </div>
-                            <Button className={classes.DeleteIcon}>
+                            <Button className={classes.DeleteIcon}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleDeleteDog(id.toString());
+                                    }}>
                                 <FontAwesomeIcon icon={faTrash} />
                             </Button>
                         </Link>

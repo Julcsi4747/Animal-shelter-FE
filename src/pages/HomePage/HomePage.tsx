@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "../SuccessesPage/Successes.module.scss";
 
 const HomePage = () => {
     return <div className="container d-flex justify-content-center">
@@ -11,7 +12,12 @@ const HomePage = () => {
                         <img className="img popover" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bernese-mountain-dog-royalty-free-image-1581013857.jpg?crop=0.87845xw:1xh;center,top&resize=980:*"/>
                         </div>
                         <div className=".right">
-                            <h1 className="content">Tappancs Állatmenhely</h1>
+                            <div
+                                className={classes.SuccessImage}
+                                style={{ backgroundImage: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bernese-mountain-dog-royalty-free-image-1581013857.jpg?crop=0.87845xw:1xh;center,top&resize=980:*" }}
+                            />
+                                <div className="d-flex flex-column">Tappancs Állatmenhely</div>
+
                             <p><strong className="btn">100% hűség</strong><br/> </p>
                         </div>
                     </div>

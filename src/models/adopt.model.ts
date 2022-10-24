@@ -9,6 +9,7 @@ export interface DogModel {
     birthDate: Date;
     description: string;
     imageUrl: string;
+    adopted: boolean;
 }
 
-export interface DogValues extends Omit<DogModel, "id"> {}
+export interface DogFormValues extends Omit<DogModel, "id" | "adopted"> {}

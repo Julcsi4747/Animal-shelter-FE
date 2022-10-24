@@ -1,10 +1,12 @@
 import {Navigate, Route, Routes} from "react-router-dom";
+
 import Navbar from "./components/navbar/Navbar";
-import HomePage from "./components/HomePage/HomePage";
-import AdoptPage from "./components/AdoptPage/AdoptPage";
-import SuccessesPage from "./components/SuccessesPage/SuccessesPage";
-import SignInPage from "./components/SignInPage/SignInPage";
-import ErrorPage from "./components/ErrorPage/ErrorPage";
+import HomePage from "./pages/HomePage/HomePage";
+import AdoptPage from "./pages/AdoptPage/AdoptPage";
+import SuccessesPage from "./pages/SuccessesPage/SuccessesPage";
+import SignInPage from "./pages/SignInPage/SignInPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import DogPage from "./pages/DogPage/DogPage";
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
               <Route path="/home" element={<HomePage />}/>
               <Route path="/signin" element={<SignInPage />}/>
               <Route path="/adopt" element={<AdoptPage />}/>
+              <Route path="/dog/create" element={<DogPage />} />
+              <Route path="/adopt/:id" element={<DogPage/>} />
               <Route path="/successes" element={<SuccessesPage />}/>
               <Route path="/error" element={<ErrorPage />}/>
               <Route path="*" element={<Navigate to={"/error"} replace={true}/>}/>
