@@ -13,13 +13,16 @@ import Button from "../../components/button/Button";
 const DogPage = () => {
     const { id } = useParams<{ id: string }>();
     const [dog, setDog] = useState<DogModel>();
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
+        setLoading(true);
         const fetchDog = async (id: string) =>
             setDog(await adoptService.getDog(id));
         if (id) {
             fetchDog(id);
+            setLoading(false);
         }
     }, [id]);
 
@@ -59,7 +62,7 @@ const DogPage = () => {
     };
 
     return (
-        <Page title={dog ? dog.name : "Dog"}>
+        <Page title={dog ? dog.name : "Dog"}  loading={loading}>
             <Formik
                 initialValues={initialValues}
                 validationSchema={schema}

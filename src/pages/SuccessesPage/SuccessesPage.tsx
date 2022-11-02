@@ -9,17 +9,20 @@ import classes from "./Successes.module.scss";
 
 const SuccessesPage = () => {
     const [success, setSuccess] = useState<SuccessesModel[]>([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const fetchSuccess = async () => {
             setSuccess(await successesService.getSuccess());
+            setLoading(false);
         };
 
         fetchSuccess();
     }, []);
 
     return (
-        <Page title="Sikersztorik">
+        <Page title="Sikersztorik"  loading={loading}>
             <div className="row">
                 {success.map(({ id, image, name, date }) => (
                     <div key={id} className="col-lg-4 col-md-6 col-sm-12">
