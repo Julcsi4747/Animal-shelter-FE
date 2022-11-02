@@ -6,11 +6,11 @@ class AdoptService {
         return request<DogModel[]>({ method: Methods.GET, resource: "dogs" });
     }
 
-    async getDog(id: string) {
+    async getDog(id: number) {
         return request<DogModel>({ resource: `dogs/${id}`, method: Methods.GET });
     }
 
-    async updateDog(id: string, data: DogFormValues) {
+    async updateDog(id: number, data: DogFormValues) {
         return request<DogModel>({
             method: Methods.PATCH,
             data,
@@ -26,7 +26,7 @@ class AdoptService {
         });
     }
 
-    async deleteDog(id: string) {
+    async deleteDog(id: number) {
         return request({ method: Methods.DELETE, resource: `dogs/${id}` });
     }
 }
