@@ -10,6 +10,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import DogPage from "./pages/DogPage/DogPage";
 import { AUTH_TOKEN } from "./util/constants";
 import { getDataFromTokenModel } from "./util/token";
+import { Component } from "react";
 
 interface AppState {
   token: string | null;

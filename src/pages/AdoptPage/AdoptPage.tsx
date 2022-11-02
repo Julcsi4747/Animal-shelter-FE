@@ -36,7 +36,7 @@ const AdoptPage = () => {
     };
 
     const handleDeleteDog = async (id: number) => {
-        await adoptService.deleteDog(id);
+        await adoptService.deleteDog(id.toString());
         fetchDogs();
     };
 

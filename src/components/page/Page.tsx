@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import classNames from "classnames";
-import Loader from "../loader/loader";
+import Loader from "../loader/Loader";
 
 interface PageProps {
     title?: string;
