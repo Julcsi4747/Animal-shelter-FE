@@ -1,35 +1,81 @@
 import { FC } from "react";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Button from "../button/Button";
+import { getDataFromTokenModel } from "../../util/token";
 
 import classes from "./Navbar.module.scss";
-import {NavLink} from "react-router-dom";
-import "./navbar.scss";
+import "./Navbar.scss";
 
 interface RouteConfig{
     link: string;
     label: string;
 }
 
-const Navbar: FC = () => {
+
+interface NavBarProps {
+    isLoggedIn: boolean;
+    setToken: (token: null) => void;
+  }
+  
+  const Navbar: FC<NavBarProps> = ({ isLoggedIn, setToken }) => {
+    const email = getDataFromTokenModel("email");
 
     const routes: RouteConfig[] = [
-        { label: "Főoldal", link: "/home" },
-        { label: "Gazdit keresek", link: "/adopt"},
-        { label: "Belépés/Regisztráció", link: "/signin"},
-        { label: "Sikersztorik", link: "/successes"},
+          {
+            link: "/login",
+            label: "Belépés/Regisztráció",
+          },
+          {
+            link: "/home",
+            label: "Főoldal",
+          },
+          {
+            link: "/adopt",
+            label: "Gazdit keresek",
+          },
+          {
+            link: "/successes",
+            label: "Sikersztorik",
+          },
     ];
 
     return (
-        <nav className={classNames("navbar p-3", [classes.Navbar])}>
-            <div className="d-flex align-items-center justify-content-between flex-grow-1 flex-wrap">
-                <div className="d-flex">
-                    {routes.map(({link, label}) => (
-                        <NavLink key={link} to={link} className="nav-link me-4">
-                            {label}
-                        </NavLink>
-                    ))}
+    <nav className={classNames("navbar p-3", [classes.Navbar])}>
+        <div
+        className={classNames(
+          classes.MinWidth0,
+          "d-flex align-items-center justify-content-between flex-grow-1 flex-wrap"
+        )}
+      >
+        {isLoggedIn && (
+          <div className="d-flex">
+            {routes.map(({ link, label }) => (
+              <NavLink key={link} to={link} className="nav-link me-4">
+                {label}
+              </NavLink>
+            ))}
+          </div>
+        )}
+        <div
+          className={classNames("d-flex align-items-center", classes.MinWidth0)}
+        >
+          <p className={classNames(classes.Greeting, "mb-0")}>
+            Üdvözlünk {email ? email : "weboldalunkon"}
+          </p>
+          {isLoggedIn && (
+            <Button
+              onClick={() => setToken(null)}
+              color="secondary"
+              className="ms-3"
+            >
+              <FontAwesomeIcon icon={faSignOutAlt} />
+            </Button>
+          )}
                 </div>
-                <div className="align-items-end"> Tappancs Állatmenhely</div>
             </div>
         </nav>
     );
