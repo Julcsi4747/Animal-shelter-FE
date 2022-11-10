@@ -25,7 +25,11 @@ interface NavBarProps {
     const email = getDataFromTokenModel("email");
 
     const routes: RouteConfig[] = [
-        {
+          {
+            link: "/login",
+            label: "Belépés/Regisztráció",
+          },
+          {
             link: "/home",
             label: "Főoldal",
           },
@@ -36,10 +40,6 @@ interface NavBarProps {
           {
             link: "/successes",
             label: "Sikersztorik",
-          },
-          {
-            link: "/signin",
-            label: "Belépés/Regisztráció",
           },
     ];
 
@@ -64,7 +64,7 @@ interface NavBarProps {
           className={classNames("d-flex align-items-center", classes.MinWidth0)}
         >
           <p className={classNames(classes.Greeting, "mb-0")}>
-            Welcome {email ? email : "to Attrecto Academy"}
+            Üdvözlünk {email ? email : "weboldalunkon"}
           </p>
           {isLoggedIn && (
             <Button
@@ -76,7 +76,6 @@ interface NavBarProps {
             </Button>
           )}
                 </div>
-                <div className="align-items-end"> Tappancs Állatmenhely</div>
             </div>
         </nav>
     );

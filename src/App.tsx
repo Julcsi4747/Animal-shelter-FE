@@ -49,23 +49,23 @@ render () {
             <>
               <Route path="/" element={<HomePage />}/>
               <Route path="/home" element={<HomePage />}/>
-              <Route path="/signin" element={<SignInPage />}/>
               <Route path="/adopt" element={<AdoptPage />}/>
               <Route path="/dog/create" element={<DogPage />} />
-              <Route path="/adopt/:id" element={<DogPage/>} />
+              <Route path="/dog/:id" element={<DogPage/>} />
               <Route path="/successes" element={<SuccessesPage />}/>
               <Route path="/error" element={<ErrorPage />}/>
-              <Route path="*" element={<Navigate to={"/error"} replace={true}/>}/>
+              <Route path="*" element={<Navigate to={"/home"} replace={true}/>}/>
             </>
           ) : (
             <>
               <Route path="/" element={<HomePage />}/>
               <Route path="/home" element={<HomePage />}/>
-              <Route
-                path="/login"
+              <Route path="/adopt" element={<AdoptPage />}/>
+              <Route path="/successes" element={<SuccessesPage />}/>
+              <Route path="/login"
                 element={<LoginPage setToken={this.setToken} />}
               />
-              <Route path="*" element={<Navigate to="/login" replace />} />
+              <Route path="*" element={<Navigate to="/home" replace />} />
             </>
           )}
           </Routes>

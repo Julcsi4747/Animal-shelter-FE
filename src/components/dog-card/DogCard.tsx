@@ -50,11 +50,11 @@ const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
   );
 
   return showLink ? (
-    <Link to={`/dog/${id}`} className={classNames("card", classes.UserCard)}>
+    <Link to={`/dog/${id}`} className={classNames("card", classes.DogCard)}>
       {renderDogCardContent()}
     </Link>
   ) : (
-    <div className={classNames("card", classes.UserCard, classes.NotLink)}>
+    <div className={classNames("card", classes.DogCard, classes.NotLink)}>
       {renderDogCardContent()}
     </div>
   );
