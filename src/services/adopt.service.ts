@@ -31,5 +31,4 @@ class AdoptService {
     }
 }
 
-
 export const adoptService = new AdoptService();

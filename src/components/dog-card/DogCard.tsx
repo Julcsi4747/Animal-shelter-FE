@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -19,10 +20,15 @@ interface DogCardProps {
 
 const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
   const { id, imageUrl, name } = dog;
+  const navigate = useNavigate();
 
   const allowedDogChangeFor: Role[] = ["ADMIN"];
 
   const showLink = hasPermission(allowedDogChangeFor);
+
+    const goToApplyPage = () => {
+        navigate("/home");
+    };
 
   const renderDogCardContent = () => (
     <>
@@ -33,6 +39,9 @@ const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
       />
       <div className={classNames("card-body", classes.CardBody)}>
         <h5 className={classes.DogName}>{name}</h5>
+          <Button className="w-100 mb-3" onClick={goToApplyPage}>
+              Örökbefogadom
+          </Button>
       </div>
       <AccessController allowedFor={allowedDogChangeFor}>
         <Button
