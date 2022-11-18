@@ -13,51 +13,51 @@ import { hasPermission } from "../../util/hasPermission";
 import classes from "./DogCard.module.scss";
 
 interface DogCardProps {
-  dog: DogModel;
-  handleDeleteDog: (id: number) => void; /*(nekunk az id number)*/
+    dog: DogModel;
+    handleDeleteDog: (id: number) => void;
 }
 
 const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
-  const { id, imageUrl, name } = dog;
+    const { id, imageUrl, name } = dog;
 
-  const allowedDogChangeFor: Role[] = ["ADMIN"];
+    const allowedDogChangeFor: Role[] = ["ADMIN"];
 
-  const showLink = hasPermission(allowedDogChangeFor);
+    const showLink = hasPermission(allowedDogChangeFor);
 
-  const renderDogCardContent = () => (
-    <>
-      <img
-        src={imageUrl}
-        alt={`dog #${id}`}
-        className={classNames(classes.DogImage, "card-img-top")}
-      />
-      <div className={classNames("card-body", classes.CardBody)}>
-        <h5 className={classes.DogName}>{name}</h5>
-      </div>
-      <AccessController allowedFor={allowedDogChangeFor}>
-        <Button
-          className={classes.DeleteIcon}
-          onClick={(e) => {
-            e.preventDefault();
-            handleDeleteDog(id);
-          }}
-        >
-          <FontAwesomeIcon icon={faTrash} />
-        </Button>
-      </AccessController>
-      
-    </>
-  );
+    const renderDogCardContent = () => (
+        <>
+            <img
+                src={imageUrl}
+                alt={`dog #${id}`}
+                className={classNames(classes.DogImage, "card-img-top")}
+            />
+            <div className={classNames("card-body", classes.CardBody)}>
+                <h5 className={classes.DogName}>{name}</h5>
+            </div>
+            <AccessController allowedFor={allowedDogChangeFor}>
+                <Button
+                    className={classes.DeleteIcon}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleDeleteDog(id);
+                    }}
+                >
+                    <FontAwesomeIcon icon={faTrash} />
+                </Button>
+            </AccessController>
 
-  return showLink ? (
-    <Link to={`/dog/${id}`} className={classNames("card", classes.DogCard)}>
-      {renderDogCardContent()}
-    </Link>
-  ) : (
-    <div className={classNames("card", classes.DogCard, classes.NotLink)}>
-      {renderDogCardContent()}
-    </div>
-  );
+        </>
+    );
+
+    return showLink ? (
+        <Link to={`/dog/${id}`} className={classNames("card", classes.DogCard)}>
+            {renderDogCardContent()}
+        </Link>
+    ) : (
+        <Link to={`/dog/detail/${id}`} className={classNames("card", classes.DogCard)}>
+            {renderDogCardContent()}
+        </Link>
+    );
 };
 
 export default DogCard;

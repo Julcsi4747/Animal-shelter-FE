@@ -8,7 +8,6 @@ import AccessController from "../../components/access-controller/AccessControlle
 import { DogModel } from "../../models/adopt.model";
 import { adoptService } from "../../services/adopt.service";
 
-
 const AdoptPage = () => {
     const [dogs, setDogs] = useState<DogModel[]>([]);
     const [loading, setLoading] = useState(false);
@@ -26,8 +25,6 @@ const AdoptPage = () => {
             setDogs(await adoptService.getDogs());
             setLoading(false);
         };
-        
-
         fetchDogs();
     }, []);
 

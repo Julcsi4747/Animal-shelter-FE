@@ -33,21 +33,21 @@ const LoginPage = ({ setToken }: LoginPageProps) => {
         <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div className="card shadow mt-3">
             <div className="card-body">
-              <h5 className="card-title text-center">Sign in</h5>
+              <h5 className="card-title text-center">Belépés</h5>
               <Formik
                 initialValues={initialValues}
                 validationSchema={schema}
                 onSubmit={handleSubmit}
               >
                 <Form>
-                  <TextField name="email" label="Email" className="mb-3" />
+                  <TextField name="email" label="E-mail cím" className="mb-3" />
                   <TextField
                     name="password"
-                    label="Password"
+                    label="Jelszó"
                     type="password"
                     className="mb-3"
                   />
-                  <Button type="submit">Sign in</Button>
+                  <Button type="submit">Belépés</Button>
                 </Form>
               </Formik>
             </div>
