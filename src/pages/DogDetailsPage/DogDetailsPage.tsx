@@ -23,6 +23,10 @@ const DogDetailsPage = () => {
         navigate("/adopt");
     };
 
+    const goToApplyPage = (id: string | undefined) => {
+        navigate(`/dog/${id}/apply`);
+    };
+
     return (
         <Page title="A kutya adatai">
             <div>
@@ -39,6 +43,11 @@ const DogDetailsPage = () => {
                 <h2>{dog?.color}</h2>
                 <h2>{dog?.birthDate.toString()}</h2>
                 <p>{dog?.description}</p>
+                <div>
+                    <Button className="w-100 mb-3" onClick={() => goToApplyPage(dog?.id.toString())}>
+                        Örökbefogadom
+                    </Button>
+                </div>
                 <div>
                     <Button className="w-100 mb-3" onClick={goToAdoptPage}>
                         Vissza

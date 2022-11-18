@@ -29,6 +29,10 @@ const ApplyPage = () => {
         navigate("/adopt");
     };
 
+    const goToDogDetailPage = (id: string | undefined) => {
+        navigate(`/dog/detail/${id}`);
+    };
+
     return (
         <Page title="Jelentkezés örökbefogadásra">
             <Formik
@@ -40,18 +44,18 @@ const ApplyPage = () => {
                 validateOnChange
             >
                 <Form>
-                    <TextField name="introduction" label="Kérjük írd le miért te lennél a legmegfelelőbb gazdi" />
+                    <TextField name="introduction" label="Kérjük írd le miért te lennél a legmegfelelőbb gazdi:" />
 
                     <div className="mt-3">
                         <Button
                             color="secondary"
                             type="button"
                             className="me-2"
-                            onClick={goToAdoptPage}
+                            onClick={() => goToDogDetailPage(id)}
                         >
                             Vissza
                         </Button>
-                        <Button type="submit">Jelentkezés</Button>
+                        <Button type="submit" onClick={goToAdoptPage}>Jelentkezés</Button>
                     </div>
                 </Form>
             </Formik>

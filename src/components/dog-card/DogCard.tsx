@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -15,21 +14,15 @@ import classes from "./DogCard.module.scss";
 
 interface DogCardProps {
     dog: DogModel;
-    handleDeleteDog: (id: number) => void; /*(nekunk az id number)*/
+    handleDeleteDog: (id: number) => void;
 }
 
 const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
     const { id, imageUrl, name } = dog;
-    const navigate = useNavigate();
 
     const allowedDogChangeFor: Role[] = ["ADMIN"];
-    const allowedAdoptFor: Role[] = ["USER"];
 
     const showLink = hasPermission(allowedDogChangeFor);
-
-    const goToApplyPage = (id: string) => {
-        navigate(`/dog/${id}/apply`);
-    };
 
     const renderDogCardContent = () => (
         <>
@@ -41,13 +34,6 @@ const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
             <div className={classNames("card-body", classes.CardBody)}>
                 <h5 className={classes.DogName}>{name}</h5>
             </div>
-            <AccessController allowedFor={allowedAdoptFor}>
-                <div>
-                    <Button className="w-100 mb-3" onClick={() => goToApplyPage(id.toString())}>
-                        Örökbefogadom
-                    </Button>
-                </div>
-            </AccessController>
             <AccessController allowedFor={allowedDogChangeFor}>
                 <Button
                     className={classes.DeleteIcon}

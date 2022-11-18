@@ -68,7 +68,7 @@ const ProfileUpdatePage = () => {
                         >
                             Vissza
                         </Button>
-                        <Button type="submit">Szerkesztés</Button>
+                        <Button type="submit">Mentés</Button>
                     </div>
                 </Form>
             </Formik>
