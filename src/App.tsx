@@ -12,8 +12,12 @@ import { AUTH_TOKEN } from "./util/constants";
 import { getDataFromTokenModel } from "./util/token";
 import { Component } from "react";
 import ProfileUpdatePage from "./pages/ProfileUpdatePage/ProfileUpdatePage";
+import DogDetailsPage from "./pages/DogDetailsPage/DogDetailsPage";
+import ApplyPage from "./pages/ApplyPage/ApplyPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 interface AppState {
+  id: string | null;
   token: string | null;
   role: Role | null;
 }
@@ -24,6 +28,7 @@ class App extends Component<AppProps, AppState> {
   readonly state: AppState = {
     token: localStorage.getItem(AUTH_TOKEN),
     role: getDataFromTokenModel("role") as Role,
+    id: getDataFromTokenModel("id") as string,
   };
 
   setToken = (token: string | null) => {
@@ -53,8 +58,11 @@ render () {
               <Route path="/adopt" element={<AdoptPage />}/>
               <Route path="/dog/create" element={<DogPage />} />
               <Route path="/dog/:id" element={<DogPage/>} />
+              <Route path="/dog/:id/apply" element={<ApplyPage/>} />
+              <Route path="/dog/detail/:id" element={<DogDetailsPage/>} />
               <Route path="/successes" element={<SuccessesPage />}/>
-              <Route path="/user/me" element={<ProfileUpdatePage />}/>
+              <Route path="/user/me" element={<ProfilePage />}/>
+              <Route path="/user/update" element={<ProfileUpdatePage />}/>
               <Route path="/error" element={<ErrorPage />}/>
               <Route path="*" element={<Navigate to={"/home"} replace={true}/>}/>
             </>

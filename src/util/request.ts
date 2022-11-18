@@ -30,7 +30,7 @@ export interface RequestConfig extends AxiosRequestConfig {
 axios.interceptors.request.use((config: AxiosRequestConfig) => {
     const authToken = localStorage.getItem("auth-token");
     if (authToken && config.headers) {
-        config.headers.Authorization = authToken;
+        config.headers.Authorization = `Bearer ${authToken}`;
     }
 
     return config;

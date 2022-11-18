@@ -3,6 +3,7 @@ import jwtDecode from "jwt-decode";
 import { AUTH_TOKEN } from "./constants";
 
 interface TokenModel {
+  id: string;
   role: Role | null;
   email: string;
 }

@@ -6,10 +6,17 @@ import TextField from "../../components/text-field/TextField";
 import Button from "../../components/button/Button";
 import { SignUpCredentialsModel } from "../../models/signup.model";
 import {signupService} from "../../services/signup.service";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
+    const navigate = useNavigate();
     const handleSubmit = async (values: SignUpCredentialsModel) => {
         await signupService.signup(values);
+        goToLoginPage();
+    };
+
+    const goToLoginPage = () => {
+        navigate("/login");
     };
 
     const initialValues: SignUpCredentialsModel = { name: "", email: "", password: "", confirmPassword: "" };

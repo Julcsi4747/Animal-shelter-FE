@@ -104,7 +104,6 @@ const Navbar: FC<NavBarProps> = ({ isLoggedIn, setToken }) => {
                             className="ms-3"
                         >
                             <FontAwesomeIcon icon={faSignOutAlt} />
-                            <Navigate to="/home"/>
                         </Button>
                     )}
                 </div>
@@ -114,4 +113,3 @@ const Navbar: FC<NavBarProps> = ({ isLoggedIn, setToken }) => {
 };
 
 export default Navbar;
-

@@ -17,12 +17,10 @@ const DogPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setLoading(true);
         const fetchDog = async (id: string) =>
             setDog(await adoptService.getDog(id.toString()));
         if (id) {
             fetchDog(id);
-            setLoading(false);
         }
     }, [id]);
 
