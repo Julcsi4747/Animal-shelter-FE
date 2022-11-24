@@ -15,6 +15,7 @@ import ProfileUpdatePage from "./pages/ProfileUpdatePage/ProfileUpdatePage";
 import DogDetailsPage from "./pages/DogDetailsPage/DogDetailsPage";
 import ApplyPage from "./pages/ApplyPage/ApplyPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import WalkPage from "./pages/WalkPage/WalkPage";
 
 interface AppState {
   id: string | null;
@@ -53,12 +54,14 @@ render () {
           <Routes>
               {token ? (
             <>
+              <Route path="/user/me" element={<ProfilePage />}/>
               <Route path="/" element={<HomePage />}/>
               <Route path="/home" element={<HomePage />}/>
               <Route path="/adopt" element={<AdoptPage />}/>
               <Route path="/dog/create" element={<DogPage />} />
               <Route path="/dog/:id" element={<DogPage/>} />
               <Route path="/dog/:id/apply" element={<ApplyPage/>} />
+              <Route path="/dog/:id/walk" element={<WalkPage/>} />
               <Route path="/dog/detail/:id" element={<DogDetailsPage/>} />
               <Route path="/successes" element={<SuccessesPage />}/>
               <Route path="/user/me" element={<ProfilePage />}/>
@@ -76,6 +79,7 @@ render () {
               <Route path="/login"
                 element={<LoginPage setToken={this.setToken} />}
               />
+              <Route path="/error" element={<ErrorPage />}/>
               <Route path="*" element={<Navigate to="/home" replace />} />
             </>
           )}

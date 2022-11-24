@@ -1,55 +1,42 @@
 import React from "react";
-import classes from "../SuccessesPage/Successes.module.scss";
+import "../HomePage/HomePage.scss";
 
 const HomePage = () => {
-    return <div className="container d-flex justify-content-center">
-        <div className="p-4 text-center">
-            <div className="card my-4  p-4 bg-white shadow text-center">
-                <h5>Főoldal</h5>
-                <div className="card p-5 shadow bg-success bg-opacity-50">
-                    <div className=".row:after">
-                        <div className=".column .left">
-                        <img className="img popover" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bernese-mountain-dog-royalty-free-image-1581013857.jpg?crop=0.87845xw:1xh;center,top&resize=980:*"/>
+    return (
+        <div>
+            <div id="div1" className="d-flex flex-column">
+                <h1><b>Tappancs Állatmenhely</b></h1>
+                    <p><h2>100% hűség</h2> </p>
+            </div>
+                    <div id="div2"  className="card my-4  p-4 bg-white shadow text-center">
+                    <h5><b>Adó 1+1 állatvédelemre</b></h5>
+                        <p id="p1">Az egy százalék felajánlás segíti az állatvédelem és az állatmenhely fontos feladatainak sikeresebb elvégzését,
+                             azaz az utcáról megmentett kutyusok biztonságba helyezését és védelmét.
+                             Az 1 százalék felajánlás felett sokan elsiklanak, pedig adóbevalláskor vagy utána május közepéig
+                             az adó 1 százalék felajánlás révén úgy lehet támogatni az állatmentő tevékenységet, hogy az közben nem
+                             kerül semmibe sem. Sok állatbarát az utcán talált kutyák kapcsán keresi fel a Tappancs Állatmanhely
+                             állatvédelmi központját, sokan pedig csak szimplán (állatbarát szemlélet miatt, együttérzésből, odaadásból) szeretnék az állatmenhely támogatása révén segíteni a soha véget nem érő állatmentő feladatokat.
+                             A megmentett állatokat Gazdi kereső révén szerető Gazdi jelöltek számára tesszük (meggyógyított, rendbe tett állapotban) örökbe fogadhatóvá.
+                            Az állatokat tenyésztők / szaporítók körében nagyon sok az eladó kutya. Sokkal több állatot szaporítanak az emberek, mint amennyire
+                             a felelős állattartói kőr igényt tart. A hirdetésekben közzé tett eladó kutyák,
+                              eladó házi kedvencek legtöbbje a felelőtlen megvásárlásokat követően megunt
+                             tárgyként - gazdátlanul - az utcán köt ki. Kóbor állatként a Tappancs állatmanhely állatvédelmi
+                             központjában kerül megmentésre az utcára kitett / elhagyott kutyusok közül évente többszáznyi.
+                             Ha kutyát vásárolna, gondoljon az örökbe fogadható házi kedvencekre, válasszon
+                             megvásárolható állat helyett az utcáról megmentett, teljesen egészséges, ingyen elvihető,
+                             örökbe fogadható kutyusokra. Az országos állatvédő együttgondolkodás az igazi állatmentő segítség!
+                             Az adó 1% felajánlás mellett így fontos a kutya örökbefogadás.</p>
                         </div>
-                        <div className=".right">
-                            <div
-                                className={classes.SuccessImage}
-                                style={{ backgroundImage: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bernese-mountain-dog-royalty-free-image-1581013857.jpg?crop=0.87845xw:1xh;center,top&resize=980:*" }}
-                            />
-                                <div className="d-flex flex-column">Tappancs Állatmenhely</div>
-
-                            <p><strong className="btn">100% hűség</strong><br/> </p>
+                <div id="wrapper" >
+                    <div id="first"><h3><b>További kérdésed van? </b></h3>
+                        <h4>Itt elérsz minket: +36 20/259-4167</h4></div>
+                        <div id="second"><h3><b>Nyitvatartás:</b></h3>
+                            <h4>H-P: 8:00-17:00</h4>
+                            <h4>Szo-V: 8:00-12:00</h4>
                         </div>
                     </div>
                 </div>
-                <div className="text-start my-4">
-                NYITVA TARTÁS:<br/> H-P: 14-17h<br/> Szombat, vasárnap és ünnepnap: 9-12h
-                </div>
-                <h3 className="text-start">Rólunk</h3>
-                <div className="text-lg-start">
-                <p><br/> A kutyák és cicák oltva, féregtelenítve és bolhátlanítva várják gazdijukat és örökbefogadási
-                    szerződéssel vihetők el. Egészséges vagy gyógyítható állatot nem altatunk!<br/> VÁRJUK
-                        ÖNKÉNTESEK JELENTKEZÉSÉT BÁRMILYEN SEGÍTSÉGGEL! (sétáltatás, takarítás stb.)<br/> Megkérjük a
-                            menhelyre először kilátogató önkénteseket, hogy feltétlenül regisztrálják magukat előzetesen
-                            telefonon, így olyan időpontot tudunk megbeszélni, amikor régi önkénteseink kint vannak és
-                            tudnak időt szakítani a menhely és az állatok bemutatására. Szervezett segítőnapokat
-                            általában a hétvégeken tartunk, amikor egy kölcsönös bemutatkozás, rövid ismerkedés után
-                            mindenki eldönti, miben tud/szeretne a későbbiekben segíteni. Köszönjük!<br/>
-                                CICABARÁTOK FIGYELEM! FOLYAMATOSAN KERESÜNK IDEIGLENES BEFOGADÓKAT, akik
-                                    átmenetileg tudnának gondoskodni otthonukban egy-egy cicáról (esetleg többről
-                                    egyszerre). Élelmet, macskaalmot, egyéb felszerelést természetesen biztosítunk az
-                                    ideiglenesen befogadott cicákhoz. Érdeklődni a 20/445-6572-es számon lehet.</p>
-                <p>VÁRJUK CICABARÁT ÖNKÉNTESEK SEGÍTSÉGÉT IS! A cicák gondozásában szeretnénk segítséget kérni eseti
-                    jelleggel, főleg hétvégéken. Kérjük, keressék Katát a menhelyen. <br/> Nem feletkezhetünk meg az
-                        egyéb kisállatokról sem a kutyák és a cicák mellett! Nyuszik, tengerimalacok, hörcsögök, esetleg
-                        madarak vagy más kisállatok mentésével kapcsolatban a következő telefonszámon érdeklődhetnek: 06
-                        309 360 650. Ezen kisállatok átvétele csak ezen a számon való előzetes egyeztetés után történhet
-                        meg.<br/> Menhelyünk nem azonos a felszámolt Bőny-Szőlőhegyi Csizmás Kandúr teleppel.
-                            Jelenleg Alapítványunk működteti a megye egyetlen állatmenhelyét.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    );
 };
 
 export default HomePage;

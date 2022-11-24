@@ -1,4 +1,3 @@
-
 export interface ApplyModel {
     id: number;
     userId: number;

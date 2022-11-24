@@ -38,12 +38,12 @@ const AdoptPage = () => {
     };
 
     return (
-        <Page title="Adopt"  loading={loading}>
+        <Page title="Fogadj örökbe!"  loading={loading}>
             <AccessController allowedFor={["ADMIN"]}>
         <div className="row">
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <Button className="w-100 mb-3" onClick={goToDogPage}>
-              Create Dog
+              Kutya hozzáadása
             </Button>
           </div>
         </div>
