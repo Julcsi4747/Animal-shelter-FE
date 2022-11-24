@@ -55,7 +55,7 @@ const WalkPage = () => {
                         >
                             Vissza
                         </Button>
-                        <Button type="submit" onClick={goToAdoptPage}>Jelentkezés</Button>
+                        <Button type="submit">Jelentkezés</Button>
                     </div>
                     <div>
                         <h4>Figyelem! Ha számunkra nem megfelelő az általad megadott időpont, akkor a profilodban megadott e-mail címen keresztül értesítünk.</h4>

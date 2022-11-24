@@ -55,7 +55,7 @@ const ApplyPage = () => {
                         >
                             Vissza
                         </Button>
-                        <Button type="submit" onClick={goToAdoptPage}>Jelentkezés</Button>
+                        <Button type="submit">Jelentkezés</Button>
                     </div>
                 </Form>
             </Formik>
