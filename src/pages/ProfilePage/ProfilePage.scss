@@ -1,29 +1,29 @@
 $primary-color: rgb(183, 231, 215);
 #body {background-color: $primary-color;}
 
-#image2 {
+#image {
     width: 200px;
     height: 200px;
     border: 5px solid #8cc3a9;
     border-radius: 200px;
 }
 
-#wrapper2 {
+#wrapper1 {
     padding: 20px;
     overflow: hidden;
     display: flex;
     margin-bottom: 10px;
 }
-#first2 {
+#first1 {
     display:inline-block;
 }
-
-#second2 {
+#second1 {
     display:inline-block;
     overflow: hidden;
     margin-left: 50px;
     text-align: left;
     text-align: middle;
+    margin-top: 40px;  
 }
 
 h1 {
@@ -31,14 +31,3 @@ h1 {
     align-content: left;
     
   }
-
-h2 {
-    font-size: 25px;
-    align-content: left;
-    
- }
-
-#p2 {
-    
-    text-align: justify;
-}
