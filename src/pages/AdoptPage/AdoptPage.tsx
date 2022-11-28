@@ -42,7 +42,7 @@ const AdoptPage = () => {
             <AccessController allowedFor={["ADMIN"]}>
         <div className="row">
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <Button className="w-100 mb-3" onClick={goToDogPage}>
+            <Button className="w-100 mb-3 btn-secondary" onClick={goToDogPage}>
               Kutya hozzáadása
             </Button>
           </div>

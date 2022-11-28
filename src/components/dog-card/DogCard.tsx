@@ -35,7 +35,7 @@ const DogCard = ({ dog, handleDeleteDog }: DogCardProps) => {
                 <h5 className={classes.DogName}>{name}</h5>
             </div>
             <AccessController allowedFor={allowedDogChangeFor}>
-                <Button
+                <Button 
                     className={classes.DeleteIcon}
                     onClick={(e) => {
                         e.preventDefault();

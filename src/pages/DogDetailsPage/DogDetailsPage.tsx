@@ -43,7 +43,7 @@ const DogDetailsPage = () => {
                         />
                     </div>
                     <div id="second2">
-                        <h1>Név: {dog?.name}</h1>
+                        <h1>{dog?.name}</h1>
                         <h2>Fajta: {dog?.breed}</h2>
                         <h2>Nem: {dog?.gender}</h2>
                         <h2>Ivartalanított? {dog?.castrated==true ?"Igen" : "Nem"}</h2>
@@ -54,15 +54,15 @@ const DogDetailsPage = () => {
                     <h2>Ismertető:</h2>
                     <p id="p2">{dog?.description}</p>
                 <div>
-                    <Button className="w-30 mb-3 btn-secondary" onClick={() => goToApplyPage(dog?.id.toString())}>
+                    <Button className="w-30 mb-3 btn-secondary" style={{marginRight: 10}} onClick={() => goToApplyPage(dog?.id.toString())}>
                         Örökbefogadom
                     </Button>
                 
-                    <Button className="w-30 mb-3 btn-secondary" onClick={() => goToWalkPage(dog?.id.toString())}>
+                    <Button className="w-30 mb-3 btn-secondary" style={{marginRight: 10}} onClick={() => goToWalkPage(dog?.id.toString())}>
                         Jelentkezek sétáltatásra
                     </Button>
                 
-                    <Button className="w-30 mb-3 btn-secondary" onClick={goToAdoptPage}>
+                    <Button className="w-30 mb-3 btn-secondary" style={{marginRight: 10}} onClick={goToAdoptPage}>
                         Vissza
                     </Button>
                 </div>
