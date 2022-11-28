@@ -1,0 +1,33 @@
+$primary-color: rgb(183, 231, 215);
+#body {background-color: $primary-color;}
+
+#image {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #8cc3a9;
+    border-radius: 200px;
+}
+
+#wrapper1 {
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 10px;
+}
+#first1 {
+    display:inline-block;
+}
+#second1 {
+    display:inline-block;
+    overflow: hidden;
+    margin-left: 50px;
+    text-align: left;
+    text-align: middle;
+    margin-top: 40px;  
+}
+
+h1 {
+    font-size: 30px;
+    align-content: left;
+    
+  }

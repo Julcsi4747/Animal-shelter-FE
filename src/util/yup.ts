@@ -2,10 +2,10 @@ import * as Yup from "yup";
 
 Yup.setLocale({
     mixed: {
-        required: "Required field!",
+        required: "A mező kitöltése kötelező!",
     },
     string: {
-        url: "Invalid URL!",
-        email: "Invalid email address!",
+        url: "Érvénytelen URL!",
+        email: "Érvénytelen e-mail cím!",
     },
 });

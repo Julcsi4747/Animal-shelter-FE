@@ -1,4 +1,5 @@
 import { DogFormValues, DogModel } from "../models/adopt.model";
+import { WalkFormValues } from "../models/walk.model";
 import request, {Methods} from "../util/request";
 
 class AdoptService {
@@ -28,6 +29,10 @@ class AdoptService {
 
     async deleteDog(id: string) {
         return request({ method: Methods.DELETE, resource: `dogs/${id}` });
+    }
+
+    async walk(data: WalkFormValues, id: string | undefined) {
+        return request({method: Methods.POST, data, resource: `dogs/${id}/walk`});
     }
 }
 

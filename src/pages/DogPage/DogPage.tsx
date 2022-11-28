@@ -87,9 +87,9 @@ const DogPage = () => {
                             className="me-2"
                             onClick={goToAdoptPage}
                         >
-                            Back
+                            Vissza
                         </Button>
-                        <Button type="submit">{id ? "Update" : "Create"}</Button>
+                        <Button type="submit">{id ? "Frissítés" : "Létrehozás"}</Button>
                     </div>
                 </Form>
             </Formik>

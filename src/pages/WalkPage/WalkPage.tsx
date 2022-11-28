@@ -5,23 +5,24 @@ import * as Yup from "yup";
 import Page from "../../components/page/Page";
 import TextField from "../../components/text-field/TextField";
 import Button from "../../components/button/Button";
-import { ApplyFormValues } from "../../models/apply.model";
+import { WalkFormValues } from "../../models/walk.model";
 import { applyService } from "../../services/apply.service";
+import { adoptService } from "../../services/adopt.service";
 
-const ApplyPage = () => {
+const WalkPage = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
 
-    const initialValues: ApplyFormValues = {
-        introduction: "",
+    const initialValues: WalkFormValues = {
+        date: new Date("")
     };
 
     const schema = Yup.object().shape({
-        introduction: Yup.string().required(),
+        date: Yup.date().required(),
     });
 
-    const handleSubmit = async (values: ApplyFormValues) => {
-        await applyService.apply(values, id);
+    const handleSubmit = async (values: WalkFormValues) => {
+        await adoptService.walk(values, id);
         goToAdoptPage();
     };
 
@@ -34,7 +35,7 @@ const ApplyPage = () => {
     };
 
     return (
-        <Page title="Jelentkezés örökbefogadásra">
+        <Page title="Kérlek jelezd számunkra, hogy mely időpontban tudsz jönni sétáltatásra">
             <Formik
                 initialValues={initialValues}
                 validationSchema={schema}
@@ -44,8 +45,7 @@ const ApplyPage = () => {
                 validateOnChange
             >
                 <Form>
-                    <TextField name="introduction" label="Kérjük írd le miért te lennél a legmegfelelőbb gazdi:" />
-
+                    <TextField name="introduction" label="Időpont megadása" />
                     <div className="mt-3">
                         <Button
                             color="secondary"
@@ -57,10 +57,13 @@ const ApplyPage = () => {
                         </Button>
                         <Button type="submit">Jelentkezés</Button>
                     </div>
+                    <div>
+                        <h4>Figyelem! Ha számunkra nem megfelelő az általad megadott időpont, akkor a profilodban megadott e-mail címen keresztül értesítünk.</h4>
+                    </div>
                 </Form>
             </Formik>
         </Page>
     );
 };
 
-export default ApplyPage;
+export default WalkPage;

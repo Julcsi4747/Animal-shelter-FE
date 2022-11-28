@@ -1,0 +1,44 @@
+$primary-color: rgb(112, 179, 156);
+#body {background-color: $primary-color;}
+
+#image2 {
+    width: 250px;
+    height: 250px;
+    border: 5px solid #8cc3a9;
+    border-radius: 200px;
+}
+
+#wrapper2 {
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 10px;
+}
+#first2 {
+    display:inline-block;
+}
+
+#second2 {
+    display:inline-block;
+    overflow: hidden;
+    margin-left: 50px;
+    text-align: left;
+    text-align: middle;
+}
+
+h1 {
+    font-size: 30px;
+    align-content: left;
+    text-shadow: 2px 2px 5px $primary-color;
+  }
+
+h2 {
+    font-size: 20px;
+    align-content: left;
+    
+ }
+
+#p2 {
+    
+    text-align: justify;
+}
