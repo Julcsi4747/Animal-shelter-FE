@@ -6,7 +6,6 @@ import Page from "../../components/page/Page";
 import TextField from "../../components/text-field/TextField";
 import Button from "../../components/button/Button";
 import { WalkFormValues } from "../../models/walk.model";
-import { applyService } from "../../services/apply.service";
 import { adoptService } from "../../services/adopt.service";
 
 const WalkPage = () => {
@@ -14,7 +13,7 @@ const WalkPage = () => {
     const navigate = useNavigate();
 
     const initialValues: WalkFormValues = {
-        date: new Date("")
+        date: new Date("2022-11-01")
     };
 
     const schema = Yup.object().shape({
