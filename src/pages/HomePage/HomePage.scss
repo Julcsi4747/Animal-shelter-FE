@@ -6,7 +6,6 @@ $primary-color: rgb(183, 231, 215);
   h1 {
       font-size: 40px;
       align-content: center;
-      
     }
 
     h2 {
@@ -26,21 +25,21 @@ $primary-color: rgb(183, 231, 215);
     }
 
     #div1 {
-        
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         margin-bottom: 5px;
         width: 100%;
         border: 1px solid #8cc3a9;
         background-color: #8cc3a9;
         padding: 5px;
         text-align: center;
+        height:20vh;
     }
 
     #div2 {
         margin-left: 90px;
         margin-right: 90px;
-        height:100vh;
+        height:90vh;
         border: 1px solid #8cc3a9;
         background-color: white;
         padding: 5px;
@@ -49,8 +48,8 @@ $primary-color: rgb(183, 231, 215);
 
     #div3 {
         
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         width: 100%;
         border: 1px solid #8cc3a9;
         background-color: #8cc3a9;
@@ -68,8 +67,8 @@ $primary-color: rgb(183, 231, 215);
 
     #wrapper {
         width: 100%;
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         border: 1px solid #8cc3a9;
         background-color: #8cc3a9;
         padding: 20px;
