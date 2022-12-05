@@ -57,7 +57,7 @@ const ProfileUpdatePage = () => {
                 <Form>
                     <TextField name="name" label="Név" />
                     <TextField name="email" label="E-mail cím" />
-                    <TextField name="imageUrl" label="Image url" />
+                    <TextField name="imageUrl" label="Kép url" />
 
                     <div className="mt-3">
                         <Button

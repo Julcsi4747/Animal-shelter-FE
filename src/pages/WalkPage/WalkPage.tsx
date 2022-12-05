@@ -56,8 +56,12 @@ const WalkPage = () => {
                         </Button>
                         <Button type="submit">Jelentkezés</Button>
                     </div>
-                    <div>
-                        <h4>Figyelem! Ha számunkra nem megfelelő az általad megadott időpont, akkor a profilodban megadott e-mail címen keresztül értesítünk.</h4>
+                    <div className="card text-white bg-danger mb-3" style={{maxWidth: 180}}>
+                        <div className="card-header">Figyelem!</div>
+                        <div className="card-body">
+                        <h5 className="card-title">Fontos tudnivalók!</h5>
+                        <p className="card-text"> Ha számunkra nem megfelelő az általad megadott időpont, akkor a profilodban megadott e-mail címen keresztül értesítünk.</p>
+                    </div>
                     </div>
                 </Form>
             </Formik>
