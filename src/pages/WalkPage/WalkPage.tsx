@@ -56,7 +56,7 @@ const WalkPage = () => {
                         </Button>
                         <Button type="submit">Jelentkezés</Button>
                     </div>
-                    <div className="card text-white bg-danger mb-3" style={{maxWidth: 180}}>
+                    <div className="card text-white bg-secondary mb-3" style={{maxWidth: 600, marginTop: 30}}>
                         <div className="card-header">Figyelem!</div>
                         <div className="card-body">
                         <h5 className="card-title">Fontos tudnivalók!</h5>
