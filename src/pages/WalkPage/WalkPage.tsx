@@ -13,7 +13,7 @@ const WalkPage = () => {
     const navigate = useNavigate();
 
     const initialValues: WalkFormValues = {
-        date: new Date("2022-11-01")
+        date: new Date("2022-12-12 15:00")
     };
 
     const schema = Yup.object().shape({
