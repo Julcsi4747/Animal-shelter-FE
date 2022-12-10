@@ -22,10 +22,10 @@ const SignUpPage = () => {
     const initialValues: SignUpCredentialsModel = { name: "", email: "", password: "", confirmPassword: "" };
 
     const schema = Yup.object().shape({
-        name: Yup.string().required(),
-        email: Yup.string().email().required(),
-        password: Yup.string().required(),
-        confirmPassword: Yup.string().required(),
+        name: Yup.string().required("A mező kitöltése kötelező!"),
+        email: Yup.string().email().required("A mező kitöltése kötelező!"),
+        password: Yup.string().required("A mező kitöltése kötelező!"),
+        confirmPassword: Yup.string().required("A mező kitöltése kötelező!"),
     });
 
     return (
